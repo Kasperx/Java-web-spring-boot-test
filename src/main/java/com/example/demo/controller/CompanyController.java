@@ -40,7 +40,8 @@ public class CompanyController {
     }
     
     @GetMapping("/showFormForCompanyUpdate/{id}")
-    public String showFormForCompanyUpdate(@PathVariable(value = "id") long id, Model model) throws NotFoundException {
+    public String showFormForCompanyUpdate(@PathVariable(value = "id") long id, Model model)
+    		throws NotFoundException {
 
         // get company from the service
         Company company = companyService.getCompanyById(id);

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "employees")
 
-public class Employee {
+public class Person {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +38,7 @@ public class Employee {
 		this.company = company;
 	}
 
-	public Employee() {}
+	public Person() {}
 	
 	public long getId() {
 		return id;
@@ -64,14 +64,5 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	@Override
-	public String toString() {
-		return "Employee ["
-				+ "id=" + id + ", "
-				+ "firstName=" + firstName + ", "
-				+ "lastName=" + lastName + ", "
-				+ "email=" + email + ", "
-				+ "company=" + company
-				+ "]";
-	}
+
 }

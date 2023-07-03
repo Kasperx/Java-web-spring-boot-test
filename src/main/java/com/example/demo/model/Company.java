@@ -25,16 +25,12 @@ public class Company {
 	@OneToMany(mappedBy="company")
     private Set<Employee> employees;
 	
-	
-	public Company() {
+	public Company() {}
 
-	  }
-
-	  public Company(String companyName, String email) {
+	public Company(String companyName, String email) {
 	    this.companyName = companyName;
 	    this.email = email;
-	   
-	  }
+	}
 	
 	public long getId() {
 		return id;
@@ -54,5 +50,4 @@ public class Company {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 }

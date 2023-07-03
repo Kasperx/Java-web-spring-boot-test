@@ -12,4 +12,5 @@ public interface CompanyService {
     void saveCompany(Company company);
     Company getCompanyById(long id) throws NotFoundException;
     void deleteCompanyById(long id);
+//    void createFirstData();
 }

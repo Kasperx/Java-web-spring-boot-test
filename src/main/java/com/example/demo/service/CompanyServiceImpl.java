@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 import com.example.demo.exceptionHandler.NotFoundException;
 import com.example.demo.model.Company;
 import com.example.demo.repository.CompanyRepository;
+import com.github.javafaker.Faker;
 
 
 @Service
-public class CompanyServiceImpl implements CompanyService {
+public class CompanyServiceImpl extends Tools implements CompanyService {
 
 	@Autowired
 	private CompanyRepository companyRepository;
@@ -30,7 +31,6 @@ public class CompanyServiceImpl implements CompanyService {
 
 	@Override
 	public Company getCompanyById(long id) throws NotFoundException {
-		
         return companyRepository.findById(id).orElseThrow(() -> new NotFoundException("Company not found for id ::"+id)) ;
 	}
 
@@ -38,6 +38,12 @@ public class CompanyServiceImpl implements CompanyService {
 	public void deleteCompanyById(long id) {
 		this.companyRepository.deleteById(id);
 	}
-	
-	
+
+//	@Override
+//	public void createFirstData() {
+//
+//		Company company = new Company();
+//		company.setCompanyName(faker.name().lastName());
+//		this.companyRepository.save(company);
+//	}
 }

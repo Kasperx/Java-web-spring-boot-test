@@ -45,6 +45,15 @@ public class EmployeeController {
 	        employeeService.saveEmployee(employee);
 	        return "redirect:/employees";
 	    }
+
+	    @GetMapping("/createData")
+	    public String saveEmployee() {
+	    	// save employee to database
+//	    	companyService.createFirstData();
+	    	employeeService.createData();
+//	    	return "redirect:/employees";
+	    	return "employees";
+	    }
 	    
 	    @GetMapping("/showFormForUpdate/{id}")
 	    public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) throws NotFoundException {

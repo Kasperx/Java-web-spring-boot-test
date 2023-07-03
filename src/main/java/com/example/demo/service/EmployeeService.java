@@ -11,4 +11,5 @@ public interface EmployeeService {
     void saveEmployee(Employee employee);
     Employee getEmployeeById(long id) throws NotFoundException;
     void deleteEmployeeById(long id);
+    void createData();
 }
